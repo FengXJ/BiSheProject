@@ -1,0 +1,19 @@
+//
+//  NewFeatuerController.h
+//  金科任我行
+//
+//  Created by 冯学杰 on 16/1/15.
+//  Copyright © 2016年 冯学杰. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface NewFeatuerController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIScrollView *BGscrollView;
+
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@property (strong, nonatomic) IBOutlet UIImageView *featuerImageView;
+
+@end
