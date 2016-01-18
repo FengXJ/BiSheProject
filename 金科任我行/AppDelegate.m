@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeController.h"
+#import "NewFeatuerController.h"
+#import "LoginController.h"
 
 @interface AppDelegate ()
+
 
 @end
 
@@ -16,28 +20,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setVC];
     return YES;
 }
+-(void)setVC{
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    NSString *key =@"CFBundleVersion";
+    //获取当前软件版本号
+    NSDictionary *dict = [NSBundle mainBundle].infoDictionary;
+    NSString *currentVersion = dict[key];
+    //根据用户偏好设置获取以前存储的值
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if ([currentVersion isEqualToString:lastVersion]) {
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginController *loginVC = [[LoginController alloc]init];
+        loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"login"];
+        self.window.rootViewController = loginVC;
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    }
+    else{ //把当前软件最新版本写进沙盒的用户偏好设置里面
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewFeatuerController *newController = [[NewFeatuerController alloc]init];
+        newController = [storyBoard instantiateViewControllerWithIdentifier:@"new"];
+        self.window.rootViewController = newController;
+        [[NSUserDefaults standardUserDefaults]setObject:currentVersion forKey:key];
+        [[NSUserDefaults standardUserDefaults]synchronize];
 }
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.window makeKeyAndVisible];
 }
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
