@@ -14,4 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *yanZhengNumTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *yanZhengBtn;
+
 @end

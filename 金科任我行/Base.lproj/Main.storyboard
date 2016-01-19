@@ -369,7 +369,7 @@
                                             <constraint firstAttribute="width" constant="61" id="fYg-83-95h"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="11位手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQW-wz-tLc">
@@ -384,7 +384,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4位数字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3j-Mn-4FB">
-                                        <rect key="frame" x="69" y="46" width="115" height="30"/>
+                                        <rect key="frame" x="69" y="46" width="95" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="sfu-ax-6fD"/>
                                         </constraints>
@@ -395,17 +395,17 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-Hs-vRY">
-                                        <rect key="frame" x="202" y="46" width="77" height="30"/>
+                                        <rect key="frame" x="182" y="46" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3BN-Mb-chd"/>
-                                            <constraint firstAttribute="width" constant="77" id="Kdu-UO-Gwy"/>
+                                            <constraint firstAttribute="width" constant="97" id="Kdu-UO-Gwy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="获取验证码">
                                             <color key="titleColor" red="0.98236268939393945" green="0.59106819149820733" blue="0.44560698825217426" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="yanZhengMaBtn:" destination="ENx-vp-kjI" eventType="touchUpInside" id="o6y-kx-sVO"/>
+                                            <action selector="yanZhengMaBtn:" destination="ENx-vp-kjI" eventType="touchUpInside" id="K97-b7-XIs"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-Av-dvG">
@@ -415,7 +415,7 @@
                                             <constraint firstAttribute="width" constant="61" id="gQF-tI-Tt4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -438,12 +438,12 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgZ-mC-AOn">
                                 <rect key="frame" x="8" y="214" width="296" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.66598107293090802" blue="0.51653085521882014" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96407277960526316" green="0.89592247645926371" blue="0.77281426129193842" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vfD-Lj-T0i"/>
                                 </constraints>
                                 <state key="normal" title="下一步">
-                                    <color key="titleColor" red="0.97277716295564531" green="0.95975909817426286" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.96607359656560654" blue="0.96799414144420259" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="sureBtn:" destination="ENx-vp-kjI" eventType="touchUpInside" id="zdq-1t-1Ov"/>
@@ -470,6 +470,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="phoneNumTextField" destination="NQW-wz-tLc" id="xIZ-GX-bgF"/>
+                        <outlet property="sureBtn" destination="sgZ-mC-AOn" id="ByZ-2n-E21"/>
+                        <outlet property="yanZhengBtn" destination="xd7-Hs-vRY" id="m2M-8W-MOi"/>
                         <outlet property="yanZhengNumTextField" destination="T3j-Mn-4FB" id="N4F-aI-XAV"/>
                     </connections>
                 </viewController>

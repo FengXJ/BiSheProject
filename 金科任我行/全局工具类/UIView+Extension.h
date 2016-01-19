@@ -17,4 +17,9 @@
 @property (nonatomic,assign) CGPoint origin;
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
+
+//@property (strong,nonatomic) UIView *alertView;
+////2S消失的提示框
+//-(void)myAlertView:(UIView*)bgView meg:(NSString*)meg;
+
 @end
