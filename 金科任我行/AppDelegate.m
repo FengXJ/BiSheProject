@@ -10,6 +10,7 @@
 #import "HomeController.h"
 #import "NewFeatuerController.h"
 #import "LoginController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -21,6 +22,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setVC];
+    //初始化应用，appKey和appSecret从后台申请得
+    [SMSSDK registerApp:@"ee60962ed552"
+             withSecret:@"7dc81cac1ea07426d5cd01d91bcb9729"];
     return YES;
 }
 -(void)setVC{

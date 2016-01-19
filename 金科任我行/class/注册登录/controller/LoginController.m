@@ -8,6 +8,7 @@
 
 #import "LoginController.h"
 #import "HomeController.h"
+#import "registerController.h"
 
 @interface LoginController ()
 
@@ -19,11 +20,22 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4.jpg"]];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)registerBtn:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    registerController *registerVC = [[registerController alloc]init];
+    registerVC = [storyBoard instantiateViewControllerWithIdentifier:@"register"];
+    //翻转效果
+    [registerVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    
+    [self presentViewController:registerVC animated: YES completion:nil];
 }
 
 - (IBAction)loginBtn:(id)sender {
@@ -33,8 +45,6 @@
 -(void)enterHomeVC{
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-
     
     NSMutableArray * array = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_nor.png"],[UIImage imageNamed:@"tab_me_nor.png"],[UIImage imageNamed:@"tab_qworld_nor.png"],[UIImage imageNamed:@"tab_recent_nor.png"], nil];
     NSMutableArray * selectedArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_press.png"],[UIImage imageNamed:@"tab_me_press.png"],[UIImage imageNamed:@"tab_qworld_press.png"],[UIImage imageNamed:@"tab_recent_press.png"], nil];
