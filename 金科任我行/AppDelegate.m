@@ -11,6 +11,7 @@
 #import "NewFeatuerController.h"
 #import "LoginController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "EaseMob.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,13 @@
     //初始化应用，appKey和appSecret从后台申请得
     [SMSSDK registerApp:@"ee60962ed552"
              withSecret:@"7dc81cac1ea07426d5cd01d91bcb9729"];
+    
+    //registerSDKWithAppKey:注册的appKey，详细见下面注释。
+    //apnsCertName:推送证书名(不需要加后缀)，详细见下面注释。
+    //初始化环信
+    [[EaseMob sharedInstance] registerSDKWithAppKey:@"578719825#578719825" apnsCertName:nil];
+    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
 }
 -(void)setVC{
@@ -55,12 +63,26 @@
 }
     [self.window makeKeyAndVisible];
 }
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+
+// App进入后台
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[EaseMob sharedInstance] applicationDidEnterBackground:application];
 }
 
+// App将要从后台返回
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[EaseMob sharedInstance] applicationWillEnterForeground:application];
+}
+
+// 申请处理时间
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [[EaseMob sharedInstance] applicationWillTerminate:application];
+    
+     [self saveContext];
+}
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

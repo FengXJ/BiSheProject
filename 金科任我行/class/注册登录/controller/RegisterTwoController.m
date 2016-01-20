@@ -9,6 +9,8 @@
 #import "RegisterTwoController.h"
 #import "UserZhangHu.h"
 #import "AppDelegate.h"
+#import "EaseMob.h"
+
 
 @interface RegisterTwoController ()<UITextFieldDelegate>{
     MyAlertView *alertView ;
@@ -51,37 +53,51 @@
     if (![self.pwdTextField.text isEqual: self.pwdAgainText.text]) {
         [alertView myAlertView:self.view meg:@"两次密码不一致"];
     }else{
-        //存储用户信息
-        UserZhangHu *zhanghu = nil;
         
-        NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name =%@",self.phoneNumStr]];
-        if (resultArr.count != 0) {
-            //用户名存在
-            [alertView myAlertView:self.view meg:@"两次密码不一致"];
-        }else{
-            //保存
-            zhanghu = [NSEntityDescription insertNewObjectForEntityForName:@"UserZhangHu" inManagedObjectContext:app.managedObjectContext];
-            zhanghu.name = self.phoneNumStr;
-            zhanghu.pwd = self.pwdTextField.text;
-            zhanghu.save = self.saveTextField.text;
-            zhanghu.nicheng = self.userNameTextField.text;
-            zhanghu.xueyuan = @"未设置";
-            zhanghu.sex = @"男";
-            zhanghu.age = [NSNumber numberWithInt:18];
-            zhanghu.qianming = @"未设置";
-            zhanghu.touxiang = nil;
-            
-            //定义
-            NSError * error = nil;
-            if ([app.managedObjectContext save:&error]) {
-                NSLog(@"保存注册信息成功");
+        [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.phoneNumStr password:@"baobei2012" withCompletion:^(NSString *username, NSString *password, EMError *error) {
+            if (!error) {
+                NSLog(@"注册成功");
+                [self saveUser];
+            }else{
+                NSLog(@"环信注册失败----%@",error);
             }
-            else
-            {
-                [alertView myAlertView:self.view meg:@"保存注册信息失败"];
-            }
+        } onQueue:nil];
+        
+           }
+}
+-(void)saveUser{
+    
+    //存储用户信息
+    UserZhangHu *zhanghu = nil;
+    
+    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name =%@",self.phoneNumStr]];
+    if (resultArr.count != 0) {
+        //用户名存在
+        [alertView myAlertView:self.view meg:@"两次密码不一致"];
+    }else{
+        //保存
+        zhanghu = [NSEntityDescription insertNewObjectForEntityForName:@"UserZhangHu" inManagedObjectContext:app.managedObjectContext];
+        zhanghu.name = self.phoneNumStr;
+        zhanghu.pwd = self.pwdTextField.text;
+        zhanghu.save = self.saveTextField.text;
+        zhanghu.nicheng = self.userNameTextField.text;
+        zhanghu.xueyuan = @"未设置";
+        zhanghu.sex = @"男";
+        zhanghu.age = [NSNumber numberWithInt:18];
+        zhanghu.qianming = @"未设置";
+        zhanghu.touxiang = nil;
+        
+        //定义
+        NSError * error = nil;
+        if ([app.managedObjectContext save:&error]) {
+            NSLog(@"保存注册信息成功");
+        }
+        else
+        {
+            [alertView myAlertView:self.view meg:@"保存注册信息失败"];
         }
     }
+
 }
 //限制输入
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
