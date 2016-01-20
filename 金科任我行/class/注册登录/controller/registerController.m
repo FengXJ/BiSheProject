@@ -8,6 +8,7 @@
 
 #import "registerController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "RegisterTwoController.h"
 
 @interface registerController ()<UITextFieldDelegate>{
     MyAlertView *alertView ;
@@ -106,19 +107,43 @@
             //提示框，请输入正确的验证码
             [alertView myAlertView:self.view meg:@"请输入正确的验证码"];
         }else{
-            [SMSSDK commitVerificationCode:self.yanZhengNumTextField.text phoneNumber:self.phoneNumTextField.text zone:@"86" result:^(NSError *error) {
-                
-                if (!error) {
-                    NSLog(@"验证成功");
-                    //进入下一页面
-                }
-                else
-                {
-                    NSLog(@"错误信息:%@",error);
-                    //弹出提示框 输入信息错误
-                    [alertView myAlertView:self.view meg:@"输入信息错误"];
-                }
-            }];
+            
+            
+            
+            //进入下一页面
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            RegisterTwoController *registerTwoVC = [[RegisterTwoController alloc]init];
+            registerTwoVC = [storyBoard instantiateViewControllerWithIdentifier:@"registerTwo"];
+            //翻转效果
+            [registerTwoVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            
+            //传递电话号码
+            registerTwoVC.phoneNumStr = self.phoneNumTextField.text;
+            [self presentViewController:registerTwoVC animated: YES completion:nil];
+            //暂时注销，方便测试
+//            
+//            [SMSSDK commitVerificationCode:self.yanZhengNumTextField.text phoneNumber:self.phoneNumTextField.text zone:@"86" result:^(NSError *error) {
+//                
+//                if (!error) {
+//                    NSLog(@"验证成功");
+//                    //进入下一页面
+//                    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                    RegisterTwoController *registerTwoVC = [[RegisterTwoController alloc]init];
+//                    registerTwoVC = [storyBoard instantiateViewControllerWithIdentifier:@"registerTwo"];
+//                    //翻转效果
+//                    [registerTwoVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+//                    
+//                    //传递电话号码
+//                    registerTwoVC.phoneNumStr = self.phoneNumTextField.text;
+//                    [self presentViewController:registerTwoVC animated: YES completion:nil];
+//                }
+//                else
+//                {
+//                    NSLog(@"错误信息:%@",error);
+//                    //弹出提示框 输入信息错误
+//                    [alertView myAlertView:self.view meg:@"输入信息错误"];
+//                }
+//            }];
         }
     }
     
