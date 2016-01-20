@@ -7,7 +7,7 @@
 //
 
 #import "NewFeatuerController.h"
-#import "HomeController.h"
+#import "LoginController.h"
 #define  PicCount 3
 
 @interface NewFeatuerController ()<UIScrollViewDelegate>{
@@ -67,7 +67,7 @@
 {
     window = [UIApplication sharedApplication].keyWindow;
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomeController *viewCtl = [storyBoard instantiateViewControllerWithIdentifier:@"home"];
+    LoginController *viewCtl = [storyBoard instantiateViewControllerWithIdentifier:@"login"];
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     window.rootViewController = viewCtl;
     [window makeKeyAndVisible];

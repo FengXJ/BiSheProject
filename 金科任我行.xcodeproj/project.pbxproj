@@ -40,6 +40,9 @@
 		2A74B6A21C4DE0DF00225E6F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A11C4DE0DF00225E6F /* MessageUI.framework */; };
 		2A74B6A41C4DE0F200225E6F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A31C4DE0F200225E6F /* JavaScriptCore.framework */; };
 		2A74B6A61C4DE0FC00225E6F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A51C4DE0FC00225E6F /* libstdc++.tbd */; };
+		2A95D2761C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */; };
+		2A95D2771C4F7AA3004B803F /* UserZhangHu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2751C4F7AA3004B803F /* UserZhangHu.m */; };
+		2A95D27A1C4F7B20004B803F /* DataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2791C4F7B20004B803F /* DataTool.m */; };
 		2ACCDEB81C4E2E7400C99AAC /* MyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCDEB71C4E2E7400C99AAC /* MyAlertView.m */; };
 		2ACCDEBB1C4F255C00C99AAC /* RegisterTwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCDEBA1C4F255C00C99AAC /* RegisterTwoController.m */; };
 		2AFE74891C48BE29007ABFD3 /* NewFeature-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AFE74881C48BE29007ABFD3 /* NewFeature-0.jpg */; };
@@ -125,6 +128,12 @@
 		2A74B6A11C4DE0DF00225E6F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2A74B6A31C4DE0F200225E6F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		2A74B6A51C4DE0FC00225E6F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		2A95D2721C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserZhangHu+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserZhangHu+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2A95D2741C4F7AA3004B803F /* UserZhangHu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserZhangHu.h; sourceTree = "<group>"; };
+		2A95D2751C4F7AA3004B803F /* UserZhangHu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserZhangHu.m; sourceTree = "<group>"; };
+		2A95D2781C4F7B20004B803F /* DataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTool.h; sourceTree = "<group>"; };
+		2A95D2791C4F7B20004B803F /* DataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTool.m; sourceTree = "<group>"; };
 		2ACCDEB61C4E2E7400C99AAC /* MyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAlertView.h; sourceTree = "<group>"; };
 		2ACCDEB71C4E2E7400C99AAC /* MyAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAlertView.m; sourceTree = "<group>"; };
 		2ACCDEB91C4F255C00C99AAC /* RegisterTwoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTwoController.h; sourceTree = "<group>"; };
@@ -270,6 +279,8 @@
 				2A3C56B11C48B927005483CC /* PrefixHeader.pch */,
 				2A3C56B21C48B927005483CC /* UIUtil.h */,
 				2A3C56B31C48B927005483CC /* UIUtil.m */,
+				2A95D2781C4F7B20004B803F /* DataTool.h */,
+				2A95D2791C4F7B20004B803F /* DataTool.m */,
 			);
 			path = "全局工具类";
 			sourceTree = "<group>";
@@ -454,6 +465,10 @@
 		2AFE74B51C4C7A17007ABFD3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2A95D2721C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.h */,
+				2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */,
+				2A95D2741C4F7AA3004B803F /* UserZhangHu.h */,
+				2A95D2751C4F7AA3004B803F /* UserZhangHu.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -628,13 +643,16 @@
 				2AFE749D1C48CA3C007ABFD3 /* XMTabBarController.m in Sources */,
 				2A3C56AE1C48B6D5005483CC /* NewFeatuerController.m in Sources */,
 				2A74B64E1C4CB97F00225E6F /* registerController.m in Sources */,
+				2A95D2761C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m in Sources */,
 				2A3C56751C48B52F005483CC /* AppDelegate.m in Sources */,
 				2AFE74B91C4C7A3B007ABFD3 /* LoginController.m in Sources */,
 				2ACCDEBB1C4F255C00C99AAC /* RegisterTwoController.m in Sources */,
 				2A3C56721C48B52F005483CC /* main.m in Sources */,
 				2A3C56B51C48B927005483CC /* UIUtil.m in Sources */,
 				2A3C56B81C48BA56005483CC /* UIView+Extension.m in Sources */,
+				2A95D27A1C4F7B20004B803F /* DataTool.m in Sources */,
 				2A3C56B41C48B927005483CC /* LCFont.m in Sources */,
+				2A95D2771C4F7AA3004B803F /* UserZhangHu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

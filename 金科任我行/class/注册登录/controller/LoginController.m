@@ -10,7 +10,9 @@
 #import "HomeController.h"
 #import "registerController.h"
 
-@interface LoginController ()
+@interface LoginController ()<UITextFieldDelegate>{
+    MyAlertView *alertView;
+}
 
 @end
 
@@ -20,6 +22,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4.jpg"]];
     
+    self.loginBtn.enabled = NO;
+    [self.loginBtn setBackgroundColor:LCHexColor(0xf6e4c5)];
+    //验证码按钮可用时的颜色
+    
+    alertView = [[MyAlertView alloc]init];
     
 }
 
@@ -74,4 +81,51 @@
     [self.window makeKeyAndVisible];
 }
 
+//限制输入
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (self.userNameTextField.text.length > 1 && self.pwdTextField.text.length > 1) {
+        [self.loginBtn setBackgroundColor:LCHexColor(0xf6b725)];
+        self.loginBtn.enabled = YES;
+        
+    } else {
+        if (string.length > 1) {
+            [self.loginBtn setBackgroundColor:LCHexColor(0xf6b725)];
+            self.loginBtn.enabled = YES;
+            
+        }else{
+            [self.loginBtn setBackgroundColor:LCHexColor(0xf6e4c5)];
+            self.loginBtn.enabled = NO;
+        }
+    }
+    
+    if(textField == self.userNameTextField||textField == self.pwdTextField){
+        
+        if (textField.text.length >= 16 && string.length > range.length) {
+            return NO;
+        }else{
+            return YES;
+        }
+    }
+    
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    if(textField == self.pwdTextField ||textField == self.userNameTextField){
+        
+        if (textField.markedTextRange == nil && textField.text.length > 16) {
+            textField.text = [textField.text substringToIndex:16];
+        }
+    }
+
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+    
+    self.loginBtn.enabled = NO;
+    [self.loginBtn setBackgroundColor:LCHexColor(0xf6e4c5)];
+    
+    return YES;
+}
 @end
