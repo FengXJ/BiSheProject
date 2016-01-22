@@ -10,6 +10,10 @@
 #import "HomeController.h"
 #import "registerController.h"
 
+#import "UMComUMengLoginHandler.h"
+#import "UMComUserAccount.h"
+
+
 @interface LoginController ()<UITextFieldDelegate>{
     MyAlertView *alertView;
 }
@@ -46,7 +50,21 @@
 }
 
 - (IBAction)loginBtn:(id)sender {
-    [self enterHomeVC];
+     [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    //判断coredata里数据帐号密码是否正确
+    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name = '%@' AND pwd = '%@'",self.userNameTextField.text,self.pwdTextField.text]];
+    if (resultArr.count != 0) {
+        //登录微社区
+        [self weiSheQu];
+        //这里应该延迟
+        [self enterHomeVC];
+       
+    }else{
+        //用户名或密码错误
+        [alertView myAlertView:self.view meg:@"用户名或密码错误"];
+    }
+    
+    
 }
 
 -(void)enterHomeVC{
@@ -79,6 +97,15 @@
     //    self.tabBar.xm_centerViewController = [[XMTestViewController alloc] init];
     self.window.rootViewController = self.tabBar;
     [self.window makeKeyAndVisible];
+}
+//登录微社区
+-(void)weiSheQu{
+    UMComUserAccount *userAccount = [[UMComUserAccount alloc] initWithSnsType:UMComSnsTypeSelfAccount];     //使用UMComSnsTypeSelfAccount代表自定义登录，该枚举类型必须和安卓SDK保持一致，否则会出现不能对应同一用户的问题
+    userAccount.usid = self.userNameTextField.text;//必填
+    userAccount.name = self.userNameTextField.text;//必填
+    userAccount.icon_url = nil; //登录用户头像
+    // 将数据传递给友盟微社区SDK
+    [UMComLoginManager loginWithLoginViewController:self userAccount:userAccount];//self表示当前登录页面
 }
 
 //限制输入
@@ -118,9 +145,14 @@
             textField.text = [textField.text substringToIndex:16];
         }
     }
+    
+    
 
 }
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
 
+    return YES;
+}
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
     
     self.loginBtn.enabled = NO;

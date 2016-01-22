@@ -12,6 +12,7 @@
 #import "EaseMob.h"
 
 
+
 @interface RegisterTwoController ()<UITextFieldDelegate>{
     MyAlertView *alertView ;
     AppDelegate *app;
@@ -57,6 +58,7 @@
         [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.phoneNumStr password:@"baobei2012" withCompletion:^(NSString *username, NSString *password, EMError *error) {
             if (!error) {
                 NSLog(@"注册成功");
+                
                 [self saveUser];
             }else{
                 NSLog(@"环信注册失败----%@",error);
@@ -70,7 +72,7 @@
     //存储用户信息
     UserZhangHu *zhanghu = nil;
     
-    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name =%@",self.phoneNumStr]];
+    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name ='%@'",self.phoneNumStr]];
     if (resultArr.count != 0) {
         //用户名存在
         [alertView myAlertView:self.view meg:@"两次密码不一致"];
@@ -99,6 +101,8 @@
     }
 
 }
+
+
 //限制输入
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (self.userNameTextField.text.length > 1 && self.pwdTextField.text.length > 1 && self.pwdAgainText.text.length > 1 && self.saveTextField.text.length > 1) {

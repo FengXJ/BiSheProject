@@ -12,6 +12,7 @@
 #import "LoginController.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "EaseMob.h"
+#import "UMCommunity.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +33,8 @@
     //初始化环信
     [[EaseMob sharedInstance] registerSDKWithAppKey:@"578719825#578719825" apnsCertName:nil];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    //微社区
+    [UMCommunity setWithAppKey:@"56a03bb1e0f55a1460002b4f"];
     
     return YES;
 }
@@ -114,6 +117,7 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"_____.sqlite"];
+    NSLog(@"%@",storeURL);
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

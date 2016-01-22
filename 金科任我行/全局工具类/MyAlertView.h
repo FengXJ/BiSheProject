@@ -11,7 +11,12 @@
 @interface MyAlertView : UIView
 
 @property (strong,nonatomic) UIView *alertView;
-
+/**
+ *  出现一个2S的View 用作提示
+ *
+ *  @param bgView 加入的背景View
+ *  @param meg    提示信息
+ */
 -(void)myAlertView:(UIView*)bgView meg:(NSString*)meg;
 
 @end
