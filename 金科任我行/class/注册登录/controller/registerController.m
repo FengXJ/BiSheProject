@@ -30,7 +30,6 @@
     [self.sureBtn setBackgroundColor:LCHexColor(0xf6e4c5)];
     //验证码按钮可用时的颜色
     [self.yanZhengBtn setTitleColor:[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1] forState:UIControlStateNormal];
-    
     alertView = [[MyAlertView alloc]init];
     
 }
@@ -107,8 +106,6 @@
             //提示框，请输入正确的验证码
             [alertView myAlertView:self.view meg:@"请输入正确的验证码"];
         }else{
-            
-            
             
             //进入下一页面
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

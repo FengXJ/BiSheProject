@@ -83,8 +83,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [[EaseMob sharedInstance] applicationWillTerminate:application];
-    
-     [self saveContext];
+    [self saveContext];
+}
+//点击屏幕收起键盘
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 #pragma mark - Core Data stack
 
