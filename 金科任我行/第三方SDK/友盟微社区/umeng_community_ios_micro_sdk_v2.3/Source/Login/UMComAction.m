@@ -65,6 +65,7 @@
     __weak typeof(self) weakSelf = self;
     [UMComPushRequest loginWithUser:loginUserAccount completion:^(id responseObject, NSError *error) {
         [weakSelf handleLoginDataWhenLoginSecceed:responseObject error:error completion:completion];
+        
     }];
 }
 

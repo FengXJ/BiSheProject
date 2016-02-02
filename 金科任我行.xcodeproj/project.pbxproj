@@ -2150,6 +2150,7 @@
 				TargetAttributes = {
 					2A3C566C1C48B52F005483CC = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Q5MUPX3P7A;
 					};
 					2A3C56881C48B52F005483CC = {
 						CreatedOnToolsVersion = 7.2;
@@ -2554,6 +2555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/注册短信/SMS_SDK",
@@ -2580,6 +2582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/注册短信/SMS_SDK",

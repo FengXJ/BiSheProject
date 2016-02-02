@@ -10,6 +10,12 @@
 #import "UMComUserAccount.h"
 #import "UMComLoginDelegate.h"
 
+//微社区注册成功 进入主界面
+@protocol LoginSuccesEnterHome
+
+-(void)LoginSuccesEnterHomeVC;
+
+@end
 
 @protocol UMComLoginFinishHandelerDelegate <NSObject>
 
@@ -21,6 +27,8 @@
  @param completion 登录结束回调
  
  */
+
+
 - (void)loginWithLoginViewController:(UIViewController *)loginViewController
                          userAccount:(UMComUserAccount *)loginUserAccount
                           completion:(void (^)(id responseObject, NSError *))completion;
@@ -29,6 +37,9 @@
 
 
 @interface UMComLoginManager : NSObject
+
+//单纯调用登录接口
+-(void)loginWeiShequId:(NSString *)IDname;
 
 
 /********************UMComFirstTimeHandelerDelegate*******************/
@@ -42,6 +53,8 @@
 
 + (void)loginWithLoginViewController:(UIViewController *)loginViewController userAccount:(UMComUserAccount *)loginUserAccount;
 
+
+@property (retain,nonatomic) id <LoginSuccesEnterHome> loginSuccesEnterHomeDelgate;
 /**
  设置登录SDK的appkey
  

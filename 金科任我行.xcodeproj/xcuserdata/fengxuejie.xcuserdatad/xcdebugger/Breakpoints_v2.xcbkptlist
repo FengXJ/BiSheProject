@@ -2,4 +2,150 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/&#x7b2c;&#x4e09;&#x65b9;SDK/&#x53cb;&#x76df;&#x5fae;&#x793e;&#x533a;/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComAction.m"
+            timestampString = "476073958.279016"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-loginWithLoginViewController:userAccount:completion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/&#x7b2c;&#x4e09;&#x65b9;SDK/&#x53cb;&#x76df;&#x5fae;&#x793e;&#x533a;/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComAction.m"
+            timestampString = "476073959.090474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-loginWithLoginViewController:userAccount:completion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__67-[UMComAction loginWithLoginViewController:userAccount:completion:]_block_invoke"
+                  moduleName = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fengxuejie/%E5%86%AF%E5%AD%A6%E6%9D%B0/%E6%AF%95%E8%AE%BE/code/%E9%87%91%E7%A7%91%E4%BB%BB%E6%88%91%E8%A1%8C/%E9%87%91%E7%A7%91%E4%BB%BB%E6%88%91%E8%A1%8C/%E7%AC%AC%E4%B8%89%E6%96%B9SDK/%E5%8F%8B%E7%9B%9F%E5%BE%AE%E7%A4%BE%E5%8C%BA/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComAction.m"
+                  timestampString = "476076400.248895"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_19"
+                  moduleName = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fengxuejie/%E5%86%AF%E5%AD%A6%E6%9D%B0/%E6%AF%95%E8%AE%BE/code/%E9%87%91%E7%A7%91%E4%BB%BB%E6%88%91%E8%A1%8C/%E9%87%91%E7%A7%91%E4%BB%BB%E6%88%91%E8%A1%8C/%E7%AC%AC%E4%B8%89%E6%96%B9SDK/%E5%8F%8B%E7%9B%9F%E5%BE%AE%E7%A4%BE%E5%8C%BA/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComAction.m"
+                  timestampString = "476076400.249523"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/&#x7b2c;&#x4e09;&#x65b9;SDK/&#x53cb;&#x76df;&#x5fae;&#x793e;&#x533a;/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComLoginManager.m"
+            timestampString = "476074832.795243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-loginWeiShequId:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/&#x7b2c;&#x4e09;&#x65b9;SDK/&#x53cb;&#x76df;&#x5fae;&#x793e;&#x533a;/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComLoginManager.m"
+            timestampString = "476074832.795243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-loginWeiShequId:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/class/&#x6ce8;&#x518c;&#x767b;&#x5f55;/controller/LoginController.m"
+            timestampString = "476076513.363723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-weiSheQuFromUserDefaults"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/class/&#x6ce8;&#x518c;&#x767b;&#x5f55;/controller/LoginController.m"
+            timestampString = "476076513.363723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-weiSheQu"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x91d1;&#x79d1;&#x4efb;&#x6211;&#x884c;/&#x7b2c;&#x4e09;&#x65b9;SDK/&#x53cb;&#x76df;&#x5fae;&#x793e;&#x533a;/umeng_community_ios_micro_sdk_v2.3/Source/Login/UMComLoginManager.m"
+            timestampString = "476075329.033393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-loginWeiShequId:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

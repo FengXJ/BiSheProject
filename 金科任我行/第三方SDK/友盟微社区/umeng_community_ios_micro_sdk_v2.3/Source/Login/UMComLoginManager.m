@@ -119,16 +119,42 @@ static UMComLoginManager *_instance = nil;
     
 //    基本登录逻辑（如果不适用demo推荐的登录逻辑可以直接实现这个方法）
     [UMComPushRequest loginWithUser:loginUserAccount completion:^(id responseObject, NSError *error) {
+        
+        
+        
         if ([responseObject isKindOfClass:[UMComUser class]]) {
             [UMComLoginManager loginSuccessWithUser:responseObject];
             [loginViewController dismissViewControllerAnimated:YES completion:^{
                 SafeCompletionDataAndError(loginManager.loginCompletion, responseObject, nil);
+                NSLog(@"微社区登录、注册成功");
+                
             }];
         }else{
             SafeCompletionDataAndError(loginManager.loginCompletion, responseObject, error);
             NSLog(@"微社区注册失败");
         }
     }];
+}
+-(void)loginWeiShequId:(NSString *)IDname{
+    UMComUserAccount *userAccount = [[UMComUserAccount alloc] initWithSnsType:UMComSnsTypeSelfAccount];     //使用UMComSnsTypeSelfAccount代表自定义登录，该枚举类型必须和安卓SDK保持一致，否则会出现不能对应同一用户的问题
+    userAccount.usid = IDname;
+    userAccount.name = IDname;
+    userAccount.icon_url = nil; //登录用户头像
+    ////登录之前先设置登录前的viewController，方便登录逻辑完成之后，跳转回来
+    [UMComPushRequest loginWithUser:userAccount completion:^(id responseObject, NSError *error) {
+        if(!error){
+            //登录成功
+            [self userDelegateEnterHomeVC];
+            NSLog(@"微社区登录、注册成功");
+        }
+        else{
+            //登录失败
+             NSLog(@"微社区注册失败");
+        }
+    }];
+}
+-(void)userDelegateEnterHomeVC{
+    [self.loginSuccesEnterHomeDelgate LoginSuccesEnterHomeVC];
 }
 
 + (void)loginSuccessWithUser:(UMComUser *)loginUser
