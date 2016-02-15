@@ -9,10 +9,13 @@
 #import "LoginController.h"
 #import "HomeController.h"
 #import "registerController.h"
+#import "UserInformationViewController.h"
 
 #import "UMComUMengLoginHandler.h"
 #import "UMComUserAccount.h"
 #import "UMComPushRequest.h"
+
+
 
 
 @interface LoginController ()<UITextFieldDelegate,LoginSuccesEnterHome>{
@@ -33,8 +36,8 @@
     //验证码按钮可用时的颜色
     
     alertView = [[MyAlertView alloc]init];
-    
-    [self isLogin];
+    [self enterHomeVC];
+//    [self isLogin];
 }
 -(void)isLogin{
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
@@ -96,6 +99,12 @@
     
     
     HomeController * vc1 = [[HomeController alloc]init];
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UserInformationViewController *vc4 = [[UserInformationViewController alloc]init];
+    vc4 = [storyBoard instantiateViewControllerWithIdentifier:@"userInformationVC"];
+
     //    XMTwoViewController * vc2 = [[XMTwoViewController alloc]init];
     //    XMThreeViewController * vc3 = [[XMThreeViewController alloc]init];
     //    XMFourViewController * vc4 = [[XMFourViewController alloc]init];
@@ -108,7 +117,7 @@
     self.tabBar.showCenterItem = YES;
     self.tabBar.centerItemImage = [UIImage imageNamed:@"btn_release.png"];
     //    self.tabBar.viewControllers = @[vc1,nav2,nav3,vc4];
-    self.tabBar.viewControllers = @[vc1];
+    self.tabBar.viewControllers = @[vc1,vc4];
     self.tabBar.textColor = [UIColor redColor];
     [self.tabBar tabBarBadgeValue:345 item:2];
     [self.tabBar tabBarBadgeValue:3 item:1];
@@ -188,8 +197,6 @@
         }
     }
     
-    
-
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
 

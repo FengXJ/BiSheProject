@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A36972D1C71712300203B80 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A36972C1C71712300203B80 /* UserInformationViewController.m */; };
 		2A3C56721C48B52F005483CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C56711C48B52F005483CC /* main.m */; };
 		2A3C56751C48B52F005483CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C56741C48B52F005483CC /* AppDelegate.m */; };
 		2A3C567B1C48B52F005483CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C56791C48B52F005483CC /* Main.storyboard */; };
@@ -241,6 +242,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A36972B1C71712300203B80 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
+		2A36972C1C71712300203B80 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
 		2A3C566D1C48B52F005483CC /* 金科任我行.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "金科任我行.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3C56711C48B52F005483CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A3C56731C48B52F005483CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -791,6 +794,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A3697271C71710300203B80 /* 个人资料 */ = {
+			isa = PBXGroup;
+			children = (
+				2A3697281C71710300203B80 /* controller */,
+				2A3697291C71710300203B80 /* model */,
+				2A36972A1C71710300203B80 /* view */,
+			);
+			path = "个人资料";
+			sourceTree = "<group>";
+		};
+		2A3697281C71710300203B80 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A36972B1C71712300203B80 /* UserInformationViewController.h */,
+				2A36972C1C71712300203B80 /* UserInformationViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2A3697291C71710300203B80 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2A36972A1C71710300203B80 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		2A3C56641C48B52F005483CC = {
 			isa = PBXGroup;
 			children = (
@@ -888,6 +924,7 @@
 		2A3C56A81C48B647005483CC /* class */ = {
 			isa = PBXGroup;
 			children = (
+				2A3697271C71710300203B80 /* 个人资料 */,
 				2AFE74B31C4C7A17007ABFD3 /* 注册登录 */,
 				2AFE748E1C48BF2B007ABFD3 /* Main (主页) */,
 				2A3C56AB1C48B697005483CC /* 版本新特性 */,
@@ -2374,6 +2411,7 @@
 				2A95D7F31C5082ED004B803F /* UMComUserTableViewCell.m in Sources */,
 				2A95D78B1C5082ED004B803F /* UMComUMengMessageHandler.m in Sources */,
 				2A95D7971C5082ED004B803F /* UMComLocationListController.m in Sources */,
+				2A36972D1C71712300203B80 /* UserInformationViewController.m in Sources */,
 				2A95D7901C5082ED004B803F /* UMComAddedImageView.m in Sources */,
 				2A95D78E1C5082ED004B803F /* UMComActionPickerAddView.m in Sources */,
 				2A95D7891C5082ED004B803F /* UMComUMengLoginHandler.m in Sources */,
