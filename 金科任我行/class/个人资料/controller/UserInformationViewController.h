@@ -10,4 +10,22 @@
 
 @interface UserInformationViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *userBGImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+
+@property (weak, nonatomic) IBOutlet UILabel *userSex;
+
+@property (weak, nonatomic) IBOutlet UILabel *userAge;
+
+@property (weak, nonatomic) IBOutlet UIButton *touXiangBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *addFriendBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *sendMegBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *escBtn;
+
+@property (weak, nonatomic) IBOutlet UIImageView *touXiangImage;
+
 @end

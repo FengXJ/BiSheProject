@@ -10,6 +10,7 @@
 #import "HomeController.h"
 #import "registerController.h"
 #import "UserInformationViewController.h"
+#import "EaseMob.h"
 
 #import "UMComUMengLoginHandler.h"
 #import "UMComUserAccount.h"
@@ -36,8 +37,8 @@
     //验证码按钮可用时的颜色
     
     alertView = [[MyAlertView alloc]init];
-    [self enterHomeVC];
 //    [self isLogin];
+    [self enterHomeVC];
 }
 -(void)isLogin{
     NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
@@ -90,41 +91,51 @@
 }
 
 -(void)enterHomeVC{
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
     
-    NSMutableArray * array = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_nor.png"],[UIImage imageNamed:@"tab_me_nor.png"],[UIImage imageNamed:@"tab_qworld_nor.png"],[UIImage imageNamed:@"tab_recent_nor.png"], nil];
-    NSMutableArray * selectedArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_press.png"],[UIImage imageNamed:@"tab_me_press.png"],[UIImage imageNamed:@"tab_qworld_press.png"],[UIImage imageNamed:@"tab_recent_press.png"], nil];
-    NSMutableArray * titles = [[NSMutableArray alloc]initWithObjects:@"首页",@"消息",@"发现",@"个人", nil];
+//    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTextField.text password:@"baobei2012" completion:^(NSDictionary *loginInfo, EMError *error) {
+//        if (!error && loginInfo) {
+//            NSLog(@"登陆成功");
     
-    
-    HomeController * vc1 = [[HomeController alloc]init];
-    
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    UserInformationViewController *vc4 = [[UserInformationViewController alloc]init];
-    vc4 = [storyBoard instantiateViewControllerWithIdentifier:@"userInformationVC"];
+            self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+            self.window.backgroundColor = [UIColor whiteColor];
+            
+            NSMutableArray * array = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_nor.png"],[UIImage imageNamed:@"tab_me_nor.png"],[UIImage imageNamed:@"tab_qworld_nor.png"],[UIImage imageNamed:@"tab_recent_nor.png"], nil];
+            NSMutableArray * selectedArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_press.png"],[UIImage imageNamed:@"tab_me_press.png"],[UIImage imageNamed:@"tab_qworld_press.png"],[UIImage imageNamed:@"tab_recent_press.png"], nil];
+            NSMutableArray * titles = [[NSMutableArray alloc]initWithObjects:@"首页",@"消息",@"发现",@"个人", nil];
+            
+            
+            HomeController * vc1 = [[HomeController alloc]init];
+            
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            
+            UserInformationViewController *vc4 = [[UserInformationViewController alloc]init];
+            vc4 = [storyBoard instantiateViewControllerWithIdentifier:@"userInformationVC"];
+            
+            //    XMTwoViewController * vc2 = [[XMTwoViewController alloc]init];
+            //    XMThreeViewController * vc3 = [[XMThreeViewController alloc]init];
+            //    XMFourViewController * vc4 = [[XMFourViewController alloc]init];
+            
+            //    UINavigationController * nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+            //    UINavigationController * nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
+            //
+            //
+            self.tabBar = [[XMTabBarController alloc]initWithTabBarSelectedImages:selectedArray normalImages:array titles:titles];
+            self.tabBar.showCenterItem = YES;
+            self.tabBar.centerItemImage = [UIImage imageNamed:@"btn_release.png"];
+            //    self.tabBar.viewControllers = @[vc1,nav2,nav3,vc4];
+            self.tabBar.viewControllers = @[vc1,vc4];
+            self.tabBar.textColor = [UIColor redColor];
+            [self.tabBar tabBarBadgeValue:345 item:2];
+            [self.tabBar tabBarBadgeValue:3 item:1];
+            
+            //    self.tabBar.xm_centerViewController = [[XMTestViewController alloc] init];
+            self.window.rootViewController = self.tabBar;
+            [self.window makeKeyAndVisible];
+            
+//        }
+//    } onQueue:nil];
 
-    //    XMTwoViewController * vc2 = [[XMTwoViewController alloc]init];
-    //    XMThreeViewController * vc3 = [[XMThreeViewController alloc]init];
-    //    XMFourViewController * vc4 = [[XMFourViewController alloc]init];
-    
-    //    UINavigationController * nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
-    //    UINavigationController * nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
-    //
-    //
-    self.tabBar = [[XMTabBarController alloc]initWithTabBarSelectedImages:selectedArray normalImages:array titles:titles];
-    self.tabBar.showCenterItem = YES;
-    self.tabBar.centerItemImage = [UIImage imageNamed:@"btn_release.png"];
-    //    self.tabBar.viewControllers = @[vc1,nav2,nav3,vc4];
-    self.tabBar.viewControllers = @[vc1,vc4];
-    self.tabBar.textColor = [UIColor redColor];
-    [self.tabBar tabBarBadgeValue:345 item:2];
-    [self.tabBar tabBarBadgeValue:3 item:1];
-    
-    //    self.tabBar.xm_centerViewController = [[XMTestViewController alloc] init];
-    self.window.rootViewController = self.tabBar;
-    [self.window makeKeyAndVisible];
+   
 }
 //用NSUserDefaults存储已登录用户名
 -(void)saveUserLoginMeg{

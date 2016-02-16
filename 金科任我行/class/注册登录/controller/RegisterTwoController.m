@@ -94,6 +94,7 @@
         NSError * error = nil;
         if ([app.managedObjectContext save:&error]) {
             NSLog(@"保存注册信息成功");
+
         }
         else
         {
