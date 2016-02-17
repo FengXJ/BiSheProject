@@ -11,6 +11,8 @@
 		2A3697711C72BD4800203B80 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3697701C72BD4800203B80 /* background.png */; };
 		2A3697741C72CFF600203B80 /* moRenUserTouXiang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3697731C72CFF600203B80 /* moRenUserTouXiang.jpg */; };
 		2A3697761C72D00000203B80 /* moRenUserBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3697751C72D00000203B80 /* moRenUserBG.jpg */; };
+		2A3697791C740CCE00203B80 /* ChangeUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3697781C740CCE00203B80 /* ChangeUserInformationViewController.m */; };
+		2A36977B1C7414F200203B80 /* xueYuan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A36977A1C7414F200203B80 /* xueYuan.plist */; };
 		2A3C56721C48B52F005483CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C56711C48B52F005483CC /* main.m */; };
 		2A3C56751C48B52F005483CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C56741C48B52F005483CC /* AppDelegate.m */; };
 		2A3C567B1C48B52F005483CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C56791C48B52F005483CC /* Main.storyboard */; };
@@ -250,6 +252,9 @@
 		2A3697701C72BD4800203B80 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		2A3697731C72CFF600203B80 /* moRenUserTouXiang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moRenUserTouXiang.jpg; sourceTree = "<group>"; };
 		2A3697751C72D00000203B80 /* moRenUserBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moRenUserBG.jpg; sourceTree = "<group>"; };
+		2A3697771C740CCE00203B80 /* ChangeUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserInformationViewController.h; sourceTree = "<group>"; };
+		2A3697781C740CCE00203B80 /* ChangeUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserInformationViewController.m; sourceTree = "<group>"; };
+		2A36977A1C7414F200203B80 /* xueYuan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xueYuan.plist; sourceTree = "<group>"; };
 		2A3C566D1C48B52F005483CC /* 金科任我行.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "金科任我行.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3C56711C48B52F005483CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A3C56731C48B52F005483CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -815,6 +820,8 @@
 			children = (
 				2A36972B1C71712300203B80 /* UserInformationViewController.h */,
 				2A36972C1C71712300203B80 /* UserInformationViewController.m */,
+				2A3697771C740CCE00203B80 /* ChangeUserInformationViewController.h */,
+				2A3697781C740CCE00203B80 /* ChangeUserInformationViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -822,6 +829,7 @@
 		2A3697291C71710300203B80 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2A36977A1C7414F200203B80 /* xueYuan.plist */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2264,6 +2272,7 @@
 				2A95D7A31C5082ED004B803F /* UMComSettingViewController.xib in Resources */,
 				2AFE74B01C4C777C007ABFD3 /* tab_qworld_press@2x.png in Resources */,
 				2A95D7741C5082ED004B803F /* UMShareEditViewControlleriPad.xib in Resources */,
+				2A36977B1C7414F200203B80 /* xueYuan.plist in Resources */,
 				2A95D7731C5082ED004B803F /* UMShareEditViewController.xib in Resources */,
 				2AFE74B21C4C777C007ABFD3 /* tab_recent_press@2x.png in Resources */,
 				2A95D7EC1C5082ED004B803F /* UMComFilterTopicsViewCell.xib in Resources */,
@@ -2393,6 +2402,7 @@
 				2ACCDEBB1C4F255C00C99AAC /* RegisterTwoController.m in Sources */,
 				2A95D7C21C5082ED004B803F /* UMImagePickerController.m in Sources */,
 				2A95D7CA1C5082ED004B803F /* UMComGridTableViewCellOne.m in Sources */,
+				2A3697791C740CCE00203B80 /* ChangeUserInformationViewController.m in Sources */,
 				2A95D7BF1C5082ED004B803F /* UMAssetsCollectionController.m in Sources */,
 				2A3C56721C48B52F005483CC /* main.m in Sources */,
 				2A95D7B01C5082ED004B803F /* UMComGridView.m in Sources */,

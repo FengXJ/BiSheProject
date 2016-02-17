@@ -7,6 +7,7 @@
 //
 
 #import "UserInformationViewController.h"
+#import "ChangeUserInformationViewController.h"
 
 @interface UserInformationViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIImagePickerController * imagePiker;
@@ -23,11 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.bodyTabelView.estimatedRowHeight = 50.0;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     //隐藏多余cell
     [self setExtraCellLineHidden:self.bodyTabelView];
     self.bodyTabelView.scrollEnabled =NO; //设置tableview 不能滚动
+    self.bodyTabelView.estimatedRowHeight = 50.0;
     
     self.touXiangImage.layer.cornerRadius = self.touXiangImage.frame.size.width / 2;
     self.touXiangImage.clipsToBounds = YES;
@@ -107,6 +109,7 @@
 
 #pragma mark 按钮事件
 - (IBAction)addFriendBtn:(id)sender {
+    
 }
 
 - (IBAction)sendMegBtn:(id)sender {
@@ -126,7 +129,13 @@
 }
 //修改个人资料Btn
 - (IBAction)changeInformationBtn:(id)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ChangeUserInformationViewController *changeUserVC = [[ChangeUserInformationViewController alloc]init];
+    changeUserVC = [storyBoard instantiateViewControllerWithIdentifier:@"changeUserVC"];
+    //翻转效果
+    [changeUserVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     
+    [self presentViewController:changeUserVC animated: YES completion:nil];
 }
 
 #pragma mark 图片处理
