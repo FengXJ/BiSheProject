@@ -102,12 +102,13 @@
             NSMutableArray * array = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_nor.png"],[UIImage imageNamed:@"tab_me_nor.png"],[UIImage imageNamed:@"tab_qworld_nor.png"],[UIImage imageNamed:@"tab_recent_nor.png"], nil];
             NSMutableArray * selectedArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"tab_buddy_press.png"],[UIImage imageNamed:@"tab_me_press.png"],[UIImage imageNamed:@"tab_qworld_press.png"],[UIImage imageNamed:@"tab_recent_press.png"], nil];
             NSMutableArray * titles = [[NSMutableArray alloc]initWithObjects:@"首页",@"消息",@"发现",@"个人", nil];
-            
-            
-            HomeController * vc1 = [[HomeController alloc]init];
-            
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             
+            HomeController * vc1 = [[HomeController alloc]init];
+            vc1 = [storyBoard instantiateViewControllerWithIdentifier:@"home"];
+    
+    
+
             UserInformationViewController *vc4 = [[UserInformationViewController alloc]init];
             vc4 = [storyBoard instantiateViewControllerWithIdentifier:@"userInformationVC"];
             

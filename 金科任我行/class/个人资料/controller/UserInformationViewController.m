@@ -28,7 +28,8 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     //隐藏多余cell
     [self setExtraCellLineHidden:self.bodyTabelView];
-    self.bodyTabelView.scrollEnabled =NO; //设置tableview 不能滚动
+//    self.bodyTabelView.scrollEnabled =NO; //设置tableview 不能滚动
+    self.bodyTabelView.bounces = NO; //设置tableview 不能下拉
     self.bodyTabelView.estimatedRowHeight = 50.0;
     
     self.touXiangImage.layer.cornerRadius = self.touXiangImage.frame.size.width / 2;

@@ -134,6 +134,18 @@
         }
     }
     
+    if (self.nianling == textField)
+    {
+        if ([toBeString length] > 2) {
+            textField.text = [toBeString substringToIndex:3];
+            
+            return NO;
+            
+        }else{
+            
+        }
+    }
+    
     return YES;
 }
 //判断文字长度
