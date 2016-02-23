@@ -7,9 +7,11 @@
 //
 
 #import "RegisterTwoController.h"
-#import "UserZhangHu.h"
 #import "AppDelegate.h"
 #import "EaseMob.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "LoginController.h"
+
 
 
 
@@ -56,53 +58,48 @@
         [alertView myAlertView:self.view meg:@"两次密码不一致"];
     }else{
         
-        [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.phoneNumStr password:@"baobei2012" withCompletion:^(NSString *username, NSString *password, EMError *error) {
-            if (!error) {
-                NSLog(@"注册成功");
+        AVUser *user = [AVUser user];
+        user.username = self.phoneNumStr;
+        user.password =  self.pwdTextField.text;
+        user.email = nil;
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.phoneNumStr password:@"baobei2012" withCompletion:^(NSString *username, NSString *password, EMError *error) {
+                    
+                    if (!error) {
+                        NSLog(@"环信注册成功");
+                        
+                        
+                    }else{
+                        NSLog(@"环信注册失败----%@",error);
+                    }
+                    AVObject *postUser = [AVObject objectWithClassName:@"UserInformation"];
+                    [postUser setObject:user.username forKey:@"username"];
+                    [postUser setObject:@"未设置" forKey:@"age"];
+                    [postUser setObject:@"未设置" forKey:@"xueyuan"];
+                    [postUser setObject:self.userNameTextField.text forKey:@"nicheng"];
+                    [postUser setObject:@"未设置" forKey:@"qianming"];
+                    [postUser setObject:self.saveTextField.text forKey:@"save"];
+                    [postUser setObject:self.phoneNumStr forKey:@"phone"];
+                    [postUser setObject:@"未设置" forKey:@"sex"];
+                    [postUser save];
+                    
+                    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    LoginController *loginVC = [[LoginController alloc]init];
+                    loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"login"];
+                    //翻转效果
+                    [loginVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [self presentViewController:loginVC animated: YES completion:nil];
+//                    
+                } onQueue:nil];
+            } else {
                 
-                [self saveUser];
-            }else{
-                NSLog(@"环信注册失败----%@",error);
             }
-        } onQueue:nil];
-        
+        }];
            }
-}
--(void)saveUser{
     
-    //存储用户信息
-    UserZhangHu *zhanghu = nil;
-    
-    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name ='%@'",self.phoneNumStr]];
-    if (resultArr.count != 0) {
-        //用户名存在
-        [alertView myAlertView:self.view meg:@"两次密码不一致"];
-    }else{
-        //保存
-        zhanghu = [NSEntityDescription insertNewObjectForEntityForName:@"UserZhangHu" inManagedObjectContext:app.managedObjectContext];
-        zhanghu.name = self.phoneNumStr;
-        zhanghu.pwd = self.pwdTextField.text;
-        zhanghu.save = self.saveTextField.text;
-        zhanghu.nicheng = self.userNameTextField.text;
-        zhanghu.xueyuan = @"未设置";
-        zhanghu.sex = @"男";
-        zhanghu.age = [NSNumber numberWithInt:18];
-        zhanghu.qianming = @"未设置";
-        zhanghu.touxiang = nil;
-        
-        //定义
-        NSError * error = nil;
-        if ([app.managedObjectContext save:&error]) {
-            NSLog(@"保存注册信息成功");
-
-        }
-        else
-        {
-            [alertView myAlertView:self.view meg:@"保存注册信息失败"];
-        }
-    }
-
 }
+
 
 
 //限制输入

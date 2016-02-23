@@ -30,4 +30,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void)enterHomeVC;
+
 @end

@@ -11,6 +11,9 @@
 #import "NewFeatuerController.h"
 #import "LoginController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import <AVOSCloud/AVOSCloud.h>
+//如果使用了实时通信模块，请添加下列导入语句到头部：
+
 #import "EaseMob.h"
 #import "UMCommunity.h"
 
@@ -23,7 +26,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self setVC];
+    
     //初始化应用，appKey和appSecret从后台申请得
     [SMSSDK registerApp:@"ee60962ed552"
              withSecret:@"7dc81cac1ea07426d5cd01d91bcb9729"];
@@ -35,6 +38,11 @@
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     //微社区
     [UMCommunity setWithAppKey:@"56a03bb1e0f55a1460002b4f"];
+    //AVOS云
+    [AVOSCloud setApplicationId:@"SsBN5HrOCMV9Qm1a1DhWib7n-gzGzoHsz"
+                      clientKey:@"0uDOK04JeUpu78NfHWNi5l55"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];//统计
+    [self setVC];
     
     return YES;
 }

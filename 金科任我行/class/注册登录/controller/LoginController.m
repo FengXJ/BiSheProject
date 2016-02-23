@@ -11,16 +11,20 @@
 #import "registerController.h"
 #import "UserInformationViewController.h"
 #import "EaseMob.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "AppDelegate.h"
 
 #import "UMComUMengLoginHandler.h"
 #import "UMComUserAccount.h"
 #import "UMComPushRequest.h"
+#import "UserZhangHu.h"
 
 
 
 
 @interface LoginController ()<UITextFieldDelegate,LoginSuccesEnterHome>{
     MyAlertView *alertView;
+    AppDelegate *app;
 }
 
 @property (strong,nonatomic)NSString *userLoginStr;
@@ -35,24 +39,73 @@
     self.loginBtn.enabled = NO;
     [self.loginBtn setBackgroundColor:LCHexColor(0xf6e4c5)];
     //验证码按钮可用时的颜色
-    
+    app = [UIApplication sharedApplication].delegate;
     alertView = [[MyAlertView alloc]init];
-//    [self isLogin];
-    [self enterHomeVC];
+    [self isLogin];
+//    [self enterHomeVC];
 }
 -(void)isLogin{
-    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
-    NSString *userStr = [ userLogin objectForKey:@"userLogin"];
-    if (userStr != nil) {
-        UMComLoginManager *uMComLoginManager = [[UMComLoginManager alloc]init];
-        uMComLoginManager.loginSuccesEnterHomeDelgate = self;
-        //登录微社区
-        [self weiSheQuFromUserDefaults];
+
+  
+//        UMComLoginManager *uMComLoginManager = [[UMComLoginManager alloc]init];
+//        uMComLoginManager.loginSuccesEnterHomeDelgate = self;
+////        //登录微社区
+////        [self weiSheQuFromUserDefaults];
+//        
+    
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser != nil) {
+        // 允许用户使用应用
+        [self enterHomeVC];
+    } else {
+        //缓存用户对象为空时，可打开用户注册界面…
     }
     
     
 }
-
+//获取已登录用户信息
+-(void)getUserInformation{
+    
+    NSUserDefaults *userLogin = [NSUserDefaults standardUserDefaults];
+    NSString *userStr = [ userLogin objectForKey:@"userLogin"];
+    
+    AVQuery *query = [AVQuery queryWithClassName:@"UserInformation"];
+    [query whereKey:@"username" equalTo:userStr];
+    [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        if (!object) {
+            NSLog(@"getFirstObject 请求失败。");
+        } else {
+            UserZhangHu *userInformation = nil;
+            NSArray *selectUser =  [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name = 13057539897"]];
+            
+            if (selectUser.count != 0) {
+                userInformation = [selectUser firstObject];
+            }else{
+                userInformation = [NSEntityDescription insertNewObjectForEntityForName:@"UserZhangHu" inManagedObjectContext:app.managedObjectContext];
+            }
+            // 查询成功
+            
+            NSLog(@"对象成功返回。");
+            // 检索成功
+            userInformation.name = [object valueForKey:@"username"];
+            userInformation.age = [object valueForKey:@"age"];
+            userInformation.xueyuan = [object valueForKey:@"xueyuan"];
+            userInformation.nicheng = [object valueForKey:@"nicheng"];
+            userInformation.qianming = [object valueForKey:@"qianming"];
+            userInformation.saveAnswer = [object valueForKey:@"saveAnswer"];
+            userInformation.phone = [object valueForKey:@"phone"];
+            userInformation.sex = [object valueForKey:@"sex"];
+             NSError * error = nil;
+            if ([app.managedObjectContext save:&error] ) {
+                NSLog(@"coredata存储成功");
+            }else{
+                NSLog(@"coredata存储失败");
+            }
+            
+        }
+    }];
+    
+}
 -(void)LoginSuccesEnterHomeVC{
     [self enterHomeVC];
 }
@@ -73,25 +126,22 @@
 
 - (IBAction)loginBtn:(id)sender {
      [[UIApplication sharedApplication].keyWindow endEditing:YES];
-    //判断coredata里数据帐号密码是否正确
-    NSArray *resultArr = [DataTool selectModel:@"UserZhangHu" request:[NSString stringWithFormat:@"name = '%@' AND pwd = '%@'",self.userNameTextField.text,self.pwdTextField.text]];
-    if (resultArr.count != 0) {
-            //登录微社区
-            [self weiSheQu];
-            //记录已登录信息
+
+    [AVUser logInWithUsernameInBackground:self.userNameTextField.text password:self.pwdTextField.text block:^(AVUser *user, NSError *error) {
+        if (user != nil) {
             [self saveUserLoginMeg];
-            //这里应该延迟
             [self enterHomeVC];
-    }else{
-        //用户名或密码错误
-        [alertView myAlertView:self.view meg:@"用户名或密码错误"];
-    }
-    
+        } else {
+            NSLog(@"登录错误====%@",error);
+            //用户名或密码错误
+            [alertView myAlertView:self.view meg:@"用户名或密码错误"];
+        }
+    }];
     
 }
 
 -(void)enterHomeVC{
-    
+        [self getUserInformation];
 //    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTextField.text password:@"baobei2012" completion:^(NSDictionary *loginInfo, EMError *error) {
 //        if (!error && loginInfo) {
 //            NSLog(@"登陆成功");

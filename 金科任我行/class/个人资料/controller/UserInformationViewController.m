@@ -8,13 +8,18 @@
 
 #import "UserInformationViewController.h"
 #import "ChangeUserInformationViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "LoginController.h"
+
 
 @interface UserInformationViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIImagePickerController * imagePiker;
     int ChooseBtn;//用于判断是换头像还是换背景 1背景 2头像
+    
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *bodyTabelView;
+
 
 
 @end
@@ -25,21 +30,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+
+    [self createUI];
+       //初始化一下
+    imagePiker = [[UIImagePickerController alloc] init];
+    //设置委托
+    imagePiker.delegate = self;
+    imagePiker.allowsEditing = YES;
+    
+    
+    
+    
+}
+
+-(void)createUI{
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     //隐藏多余cell
     [self setExtraCellLineHidden:self.bodyTabelView];
-//    self.bodyTabelView.scrollEnabled =NO; //设置tableview 不能滚动
+    //    self.bodyTabelView.scrollEnabled =NO; //设置tableview 不能滚动
     self.bodyTabelView.bounces = NO; //设置tableview 不能下拉
     self.bodyTabelView.estimatedRowHeight = 50.0;
     
     self.touXiangImage.layer.cornerRadius = self.touXiangImage.frame.size.width / 2;
     self.touXiangImage.clipsToBounds = YES;
     
-    //初始化一下
-    imagePiker = [[UIImagePickerController alloc] init];
-    //设置委托
-    imagePiker.delegate = self;
-    imagePiker.allowsEditing = YES;
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+       animated = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,17 +86,17 @@
     switch (indexPath.row) {
         case 0:
             shuxing.text = @"学院";
-            value.text = @"1这是一段很长的签名这是一段很长的签名这是一段很长的签名这是一段很长的签名这是一段很长的签名这是一段很长的签名这是一段很长的签名";
+//            value.text = _userInformation.xueyuan;
             
             break;
         case 1:
-            shuxing.text = @"邮箱";
-            value.text =@"2";
+            shuxing.text = @"联系方式";
+//            value.text =_userInformation.phone;
             
             break;
         case 2:
             shuxing.text = @"心情";
-            value.text = @"";
+//            value.text = _userInformation.qianming;
             
             break;
             
@@ -116,7 +137,18 @@
 - (IBAction)sendMegBtn:(id)sender {
 }
 
+//注销用户
 - (IBAction)escBtn:(id)sender {
+    [AVUser logOut];  //清除缓存用户对象
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userLogin"];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginController *loginVC = [[LoginController alloc]init];
+    loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"login"];
+    //翻转效果
+    [loginVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:loginVC animated: YES completion:nil];
+
+    
 }
 //更换头像Btn
 - (IBAction)touXiangBtn:(id)sender {

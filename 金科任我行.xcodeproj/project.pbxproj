@@ -36,6 +36,12 @@
 		2A3C56B81C48BA56005483CC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C56B71C48BA56005483CC /* UIView+Extension.m */; };
 		2A6F6FA01C7557E300BBD80B /* libEaseMobClientSDKLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6F6F9D1C7557E300BBD80B /* libEaseMobClientSDKLite.a */; };
 		2A6F6FA11C7557E300BBD80B /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A6F6F9F1C7557E300BBD80B /* EaseMob.bundle */; };
+		2A6F6FA61C7AB2C000BBD80B /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6F6FA31C7AB2C000BBD80B /* AVOSCloud.framework */; };
+		2A6F6FA71C7AB2C100BBD80B /* AVOSCloudCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6F6FA41C7AB2C000BBD80B /* AVOSCloudCrashReporting.framework */; };
+		2A6F6FA81C7AB2C100BBD80B /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6F6FA51C7AB2C000BBD80B /* AVOSCloudIM.framework */; };
+		2A6F6FB71C7BE7D400BBD80B /* DataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F6FB61C7BE7D400BBD80B /* DataTool.m */; };
+		2A6F6FBC1C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F6FB91C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.m */; };
+		2A6F6FBD1C7BE9FA00BBD80B /* UserZhangHu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F6FBB1C7BE9FA00BBD80B /* UserZhangHu.m */; };
 		2A74B6401C4C845C00225E6F /* bg4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A74B6341C4C845C00225E6F /* bg4.jpg */; };
 		2A74B6411C4C845C00225E6F /* goback_back_orange_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A74B6351C4C845C00225E6F /* goback_back_orange_on@2x.png */; };
 		2A74B6421C4C845C00225E6F /* ic_landing_microblog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A74B6361C4C845C00225E6F /* ic_landing_microblog@2x.png */; };
@@ -57,9 +63,6 @@
 		2A74B6A21C4DE0DF00225E6F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A11C4DE0DF00225E6F /* MessageUI.framework */; };
 		2A74B6A41C4DE0F200225E6F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A31C4DE0F200225E6F /* JavaScriptCore.framework */; };
 		2A74B6A61C4DE0FC00225E6F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A74B6A51C4DE0FC00225E6F /* libstdc++.tbd */; };
-		2A95D2761C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */; };
-		2A95D2771C4F7AA3004B803F /* UserZhangHu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2751C4F7AA3004B803F /* UserZhangHu.m */; };
-		2A95D27A1C4F7B20004B803F /* DataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A95D2791C4F7B20004B803F /* DataTool.m */; };
 		2A95D2801C4F83DD004B803F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A95D27F1C4F83DD004B803F /* MobileCoreServices.framework */; };
 		2A95D2821C4F83E7004B803F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A95D2811C4F83E7004B803F /* CFNetwork.framework */; };
 		2A95D2841C4F8410004B803F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A95D2831C4F8410004B803F /* libsqlite3.tbd */; };
@@ -379,6 +382,15 @@
 		2A6F6F9B1C7557E300BBD80B /* EMErrorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMErrorDefs.h; sourceTree = "<group>"; };
 		2A6F6F9D1C7557E300BBD80B /* libEaseMobClientSDKLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDKLite.a; sourceTree = "<group>"; };
 		2A6F6F9F1C7557E300BBD80B /* EaseMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseMob.bundle; sourceTree = "<group>"; };
+		2A6F6FA31C7AB2C000BBD80B /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		2A6F6FA41C7AB2C000BBD80B /* AVOSCloudCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudCrashReporting.framework; sourceTree = "<group>"; };
+		2A6F6FA51C7AB2C000BBD80B /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
+		2A6F6FB51C7BE7D400BBD80B /* DataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTool.h; sourceTree = "<group>"; };
+		2A6F6FB61C7BE7D400BBD80B /* DataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTool.m; sourceTree = "<group>"; };
+		2A6F6FB81C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserZhangHu+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2A6F6FB91C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserZhangHu+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2A6F6FBA1C7BE9FA00BBD80B /* UserZhangHu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserZhangHu.h; sourceTree = "<group>"; };
+		2A6F6FBB1C7BE9FA00BBD80B /* UserZhangHu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserZhangHu.m; sourceTree = "<group>"; };
 		2A74B6341C4C845C00225E6F /* bg4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg4.jpg; sourceTree = "<group>"; };
 		2A74B6351C4C845C00225E6F /* goback_back_orange_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goback_back_orange_on@2x.png"; sourceTree = "<group>"; };
 		2A74B6361C4C845C00225E6F /* ic_landing_microblog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_landing_microblog@2x.png"; sourceTree = "<group>"; };
@@ -402,12 +414,6 @@
 		2A74B6A11C4DE0DF00225E6F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2A74B6A31C4DE0F200225E6F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		2A74B6A51C4DE0FC00225E6F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		2A95D2721C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserZhangHu+CoreDataProperties.h"; sourceTree = "<group>"; };
-		2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserZhangHu+CoreDataProperties.m"; sourceTree = "<group>"; };
-		2A95D2741C4F7AA3004B803F /* UserZhangHu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserZhangHu.h; sourceTree = "<group>"; };
-		2A95D2751C4F7AA3004B803F /* UserZhangHu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserZhangHu.m; sourceTree = "<group>"; };
-		2A95D2781C4F7B20004B803F /* DataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTool.h; sourceTree = "<group>"; };
-		2A95D2791C4F7B20004B803F /* DataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTool.m; sourceTree = "<group>"; };
 		2A95D27F1C4F83DD004B803F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2A95D2811C4F83E7004B803F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2A95D2831C4F8410004B803F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -760,15 +766,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A95D8011C50837F004B803F /* CoreLocation.framework in Frameworks */,
+				2A95D7FF1C50835D004B803F /* CoreTelephony.framework in Frameworks */,
+				2A95D2801C4F83DD004B803F /* MobileCoreServices.framework in Frameworks */,
+				2A95D7FB1C50833B004B803F /* SystemConfiguration.framework in Frameworks */,
 				2A95D8051C50838B004B803F /* AVFoundation.framework in Frameworks */,
 				2A95D8031C508384004B803F /* AssetsLibrary.framework in Frameworks */,
-				2A95D8011C50837F004B803F /* CoreLocation.framework in Frameworks */,
 				2A74B69E1C4DE0CB00225E6F /* libz.tbd in Frameworks */,
 				2A74B6A61C4DE0FC00225E6F /* libstdc++.tbd in Frameworks */,
-				2A95D7FF1C50835D004B803F /* CoreTelephony.framework in Frameworks */,
 				2A95D2841C4F8410004B803F /* libsqlite3.tbd in Frameworks */,
 				2A95D7FD1C508343004B803F /* CoreGraphics.framework in Frameworks */,
-				2A95D7FB1C50833B004B803F /* SystemConfiguration.framework in Frameworks */,
 				2A95D2881C4F8428004B803F /* libiconv.tbd in Frameworks */,
 				2A95D7F91C508326004B803F /* Security.framework in Frameworks */,
 				2A95D77A1C5082ED004B803F /* libSocialQQ.a in Frameworks */,
@@ -781,16 +788,18 @@
 				2A95D2861C4F8418004B803F /* libstdc++.6.0.9.tbd in Frameworks */,
 				2A95D2821C4F83E7004B803F /* CFNetwork.framework in Frameworks */,
 				2A6F6FA01C7557E300BBD80B /* libEaseMobClientSDKLite.a in Frameworks */,
-				2A95D2801C4F83DD004B803F /* MobileCoreServices.framework in Frameworks */,
+				2A6F6FA81C7AB2C100BBD80B /* AVOSCloudIM.framework in Frameworks */,
 				2A95D77D1C5082ED004B803F /* libSocialWechat.a in Frameworks */,
 				2A95D77F1C5082ED004B803F /* libUMCommunitySDK.a in Frameworks */,
 				2A74B6A41C4DE0F200225E6F /* JavaScriptCore.framework in Frameworks */,
 				2A95D77E1C5082ED004B803F /* libWeChatSDK.a in Frameworks */,
 				2A74B6A21C4DE0DF00225E6F /* MessageUI.framework in Frameworks */,
+				2A6F6FA71C7AB2C100BBD80B /* AVOSCloudCrashReporting.framework in Frameworks */,
 				2A74B6A01C4DE0D500225E6F /* libicucore.tbd in Frameworks */,
 				2A95D76F1C5082ED004B803F /* libUMSocial_Sdk_Comment.a in Frameworks */,
 				2A74B69B1C4DE09600225E6F /* MOBFoundation.framework in Frameworks */,
 				2A74B69C1C4DE09600225E6F /* SMS_SDK.framework in Frameworks */,
+				2A6F6FA61C7AB2C000BBD80B /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +844,10 @@
 		2A3697291C71710300203B80 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F6FB81C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.h */,
+				2A6F6FB91C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.m */,
+				2A6F6FBA1C7BE9FA00BBD80B /* UserZhangHu.h */,
+				2A6F6FBB1C7BE9FA00BBD80B /* UserZhangHu.m */,
 				2A36977A1C7414F200203B80 /* xueYuan.plist */,
 			);
 			path = model;
@@ -951,6 +964,8 @@
 		2A3C56A71C48B647005483CC /* 全局工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F6FB51C7BE7D400BBD80B /* DataTool.h */,
+				2A6F6FB61C7BE7D400BBD80B /* DataTool.m */,
 				2ACCDEB61C4E2E7400C99AAC /* MyAlertView.h */,
 				2ACCDEB71C4E2E7400C99AAC /* MyAlertView.m */,
 				2A3C56B61C48BA56005483CC /* UIView+Extension.h */,
@@ -960,8 +975,6 @@
 				2A3C56B11C48B927005483CC /* PrefixHeader.pch */,
 				2A3C56B21C48B927005483CC /* UIUtil.h */,
 				2A3C56B31C48B927005483CC /* UIUtil.m */,
-				2A95D2781C4F7B20004B803F /* DataTool.h */,
-				2A95D2791C4F7B20004B803F /* DataTool.m */,
 			);
 			path = "全局工具类";
 			sourceTree = "<group>";
@@ -1276,6 +1289,16 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		2A6F6FA21C7AB2C000BBD80B /* AVOSCloud */ = {
+			isa = PBXGroup;
+			children = (
+				2A6F6FA31C7AB2C000BBD80B /* AVOSCloud.framework */,
+				2A6F6FA41C7AB2C000BBD80B /* AVOSCloudCrashReporting.framework */,
+				2A6F6FA51C7AB2C000BBD80B /* AVOSCloudIM.framework */,
+			);
+			path = AVOSCloud;
+			sourceTree = "<group>";
+		};
 		2A74B6331C4C845C00225E6F /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,6 +1321,7 @@
 		2A74B6921C4DE07E00225E6F /* 第三方SDK */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F6FA21C7AB2C000BBD80B /* AVOSCloud */,
 				2A95D6051C5082DF004B803F /* 友盟微社区 */,
 				2A95D27B1C4F83BF004B803F /* 环信 */,
 				2A74B6931C4DE07E00225E6F /* 注册短信 */,
@@ -2149,10 +2173,6 @@
 		2AFE74B51C4C7A17007ABFD3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				2A95D2721C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.h */,
-				2A95D2731C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m */,
-				2A95D2741C4F7AA3004B803F /* UserZhangHu.h */,
-				2A95D2751C4F7AA3004B803F /* UserZhangHu.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2386,6 +2406,7 @@
 				2AFE749D1C48CA3C007ABFD3 /* XMTabBarController.m in Sources */,
 				2A3C56AE1C48B6D5005483CC /* NewFeatuerController.m in Sources */,
 				2A95D7BC1C5082ED004B803F /* UMComPageControlView.m in Sources */,
+				2A6F6FBC1C7BE9FA00BBD80B /* UserZhangHu+CoreDataProperties.m in Sources */,
 				2A95D7B41C5082ED004B803F /* UMComHorizonCollectionView.m in Sources */,
 				2A95D78A1C5082ED004B803F /* UMComMessageManager.m in Sources */,
 				2A95D7F61C5082ED004B803F /* UMComErrorCode.m in Sources */,
@@ -2405,7 +2426,6 @@
 				2A95D7B71C5082ED004B803F /* UMComGenderView.m in Sources */,
 				2A95D7C01C5082ED004B803F /* UMAssetsCollectionGrid.m in Sources */,
 				2A95D7DF1C5082ED004B803F /* UMComTopicFeedViewController.m in Sources */,
-				2A95D2761C4F7AA3004B803F /* UserZhangHu+CoreDataProperties.m in Sources */,
 				2A95D78F1C5082ED004B803F /* UMComAddedImageCellView.m in Sources */,
 				2A95D7EA1C5082ED004B803F /* UMComRemoteNoticeViewController.m in Sources */,
 				2A95D7CC1C5082ED004B803F /* UMComShowToast.m in Sources */,
@@ -2413,6 +2433,7 @@
 				2A95D7F51C5082ED004B803F /* UMComConfigFile.m in Sources */,
 				2A95D7E21C5082ED004B803F /* UMComFeedDetailViewController.m in Sources */,
 				2A95D7961C5082ED004B803F /* UMComHorizontalTableView.m in Sources */,
+				2A6F6FBD1C7BE9FA00BBD80B /* UserZhangHu.m in Sources */,
 				2A95D7BE1C5082ED004B803F /* UMAssetsCollectionCheckMarkView.m in Sources */,
 				2A3C56751C48B52F005483CC /* AppDelegate.m in Sources */,
 				2A95D7C11C5082ED004B803F /* UMAssetsCollectionOverlayView.m in Sources */,
@@ -2427,6 +2448,7 @@
 				2A95D7C91C5082ED004B803F /* UMComGridTableViewCell.m in Sources */,
 				2A95D7C31C5082ED004B803F /* UMImagePickerGroupCell.m in Sources */,
 				2A95D7CE1C5082ED004B803F /* UMComEmojiPageView.m in Sources */,
+				2A6F6FB71C7BE7D400BBD80B /* DataTool.m in Sources */,
 				2ACCDEBB1C4F255C00C99AAC /* RegisterTwoController.m in Sources */,
 				2A95D7C21C5082ED004B803F /* UMImagePickerController.m in Sources */,
 				2A95D7CA1C5082ED004B803F /* UMComGridTableViewCellOne.m in Sources */,
@@ -2463,9 +2485,7 @@
 				2A95D7AB1C5082ED004B803F /* UMComBarButtonItem.m in Sources */,
 				2A95D7951C5082ED004B803F /* UMComForumSysLikeTableViewCell.m in Sources */,
 				2A95D7B11C5082ED004B803F /* UMComGridViewerController.m in Sources */,
-				2A95D27A1C4F7B20004B803F /* DataTool.m in Sources */,
 				2A3C56B41C48B927005483CC /* LCFont.m in Sources */,
-				2A95D2771C4F7AA3004B803F /* UserZhangHu.m in Sources */,
 				2A95D7F31C5082ED004B803F /* UMComUserTableViewCell.m in Sources */,
 				2A95D78B1C5082ED004B803F /* UMComUMengMessageHandler.m in Sources */,
 				2A95D7971C5082ED004B803F /* UMComLocationListController.m in Sources */,
@@ -2656,6 +2676,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/注册短信/SMS_SDK",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3/Framework/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/金科任我行/第三方SDK/AVOSCloud",
 				);
 				INFOPLIST_FILE = "金科任我行/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2669,6 +2690,13 @@
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3/Framework/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/环信/EaseMobSDK/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-lc++",
+					"-licucore",
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-FengXJ.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2684,6 +2712,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/注册短信/SMS_SDK",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3/Framework/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/金科任我行/第三方SDK/AVOSCloud",
 				);
 				INFOPLIST_FILE = "金科任我行/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2697,6 +2726,13 @@
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3/Framework/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/友盟微社区/umeng_community_ios_micro_sdk_v2.3",
 					"$(PROJECT_DIR)/金科任我行/第三方SDK/环信/EaseMobSDK/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-lc++",
+					"-licucore",
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-FengXJ.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
